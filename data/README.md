@@ -1,0 +1,1 @@
+running `python promoter_protein_clip/download_data_parse_metadata.py` with appropriate arguments will download data to subdirectories in this directory

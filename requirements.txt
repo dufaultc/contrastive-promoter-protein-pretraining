@@ -1,0 +1,9 @@
+torch
+pandas
+taxopy
+bcbio-gff
+tqdm
+transformers
+datasets
+wandb
+huggingface-hub
