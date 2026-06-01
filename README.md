@@ -1,4 +1,5 @@
 # C3P: Contrastive promoter-protein pretraining yields representations capturing bacterial gene regulation
+Our paper: https://arxiv.org/abs/2605.25242
 
 Better instructions to come!
 
