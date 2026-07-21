@@ -52,7 +52,7 @@ We recommend first installing miniconda then following the below steps
 - `conda create -n "c3p_env" python=3.12`
 - `conda activate c3p_env`
 - `conda install -c conda-forge ncbi-datasets-cli`
-- `conda install -c bioconda  mmseqs2`
+- `conda install -c conda-forge -c bioconda  mmseqs2`
 - Install pytorch for your system[https://pytorch.org/get-started/locally/]
 - Clone this repository and navigate to base 
 - `pip install -r requirements.txt`
