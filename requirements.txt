@@ -7,3 +7,4 @@ transformers
 datasets
 wandb
 huggingface-hub
+scikit-learn
