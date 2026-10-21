@@ -1,6 +1,8 @@
 # C3P: Contrastive promoter-protein pretraining yields representations capturing bacterial gene regulation [NeurIPS 2026 Oral]
 Link to our paper: https://arxiv.org/abs/2605.25242
 
+![Overview of our approach](overview.png)
+
 # Embedding with pretrained C3P model
 
 Prior to running the below, ensure pytorch is installed, then clone this repository and run `pip install -r requirements.txt` and `pip install -e .`. Pretrained models are downloadable from https://huggingface.co/dufaultc/contrastive-promoter-protein-pretraining

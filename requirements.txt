@@ -8,3 +8,4 @@ datasets
 wandb
 huggingface-hub
 scikit-learn
+einops
