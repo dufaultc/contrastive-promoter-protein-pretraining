@@ -211,6 +211,7 @@ data/*
 !data/README.md
 !data/ecoli_pairs_with_annotations.csv
 !data/imodulondb
+!data/RefSeq_all_feb_18_2026
 models
 
 checkpoints

@@ -44,6 +44,12 @@ with torch.no_grad():
 
 
 # Training your own C3P model instructions/example
+
+Follow these steps to pull bacterial genomes from NCBI, extract promoter protein pairs, then train a C3P model. 
+
+
+To train a model using the exact genomes used to built the data we train on in our paper, use `promoter_protein_clip/download_data_parse_metadata.py` to download all assemblies from RefSeq, then skip to the "Extract promoter-protein pairs" steps below, changing the `metadata_path` arguments to point to the `data/RefSeq_all_feb_18_2026/paper_subset_test_metadata.csv` (our test genomes) and `data/RefSeq_all_feb_18_2026/paper_subset_train_metadata.csv` files (our train genomes).
+
 ### Installation
 We recommend first installing miniconda then following the below steps
 
