@@ -209,6 +209,8 @@ __marimo__/
 
 data/*
 !data/README.md
+!data/ecoli_pairs_with_annotations.csv
+!data/imodulondb
 models
 
 checkpoints

@@ -1,11 +1,9 @@
-# C3P: Contrastive promoter-protein pretraining yields representations capturing bacterial gene regulation
-Our paper: https://arxiv.org/abs/2605.25242
-
-Better instructions to come!
+# C3P: Contrastive promoter-protein pretraining yields representations capturing bacterial gene regulation [NeurIPS 2026 Oral]
+Link to our paper: https://arxiv.org/abs/2605.25242
 
 # Embedding with pretrained C3P model
 
-Prior to running the below, ensure pytorch is installed, then clone this repository and run `pip install -r requirements.txt` and `pip install -e .`. Pretrained models downloadable from https://huggingface.co/dufaultc/contrastive-promoter-protein-pretraining
+Prior to running the below, ensure pytorch is installed, then clone this repository and run `pip install -r requirements.txt` and `pip install -e .`. Pretrained models are downloadable from https://huggingface.co/dufaultc/contrastive-promoter-protein-pretraining
 
 Example
 ```
@@ -102,3 +100,13 @@ CUDA_VISIBLE_DEVICES=0 python ./promoter_protein_clip/train.py \
 --save_dir=./checkpoints/diverse_100 \
 --wandb_run_name=diverse_100
 ```
+
+
+
+# Running our evaluations
+
+To run the evaluations shown in our paper, first follow the installation instructions above.
+
+`notebooks/evaluation_regulon_prediction.ipynb` demonstrates how to run the k-NN regulon/sigmulon prediction evaluation for each trained C3P model (100M, 25M, 5M, and 1M parameters), each gLM baseline (gLM2, PromoGen2, Evo, Evo2), and when using protein embeddings from ESM2 (150M). Pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
+
+`notebooks/evaluation_zero_shot_retrieval.ipynb` demonstrates how to run the zero-shot co-regulated gene retrieval evaluation for each C3P model and baseline. Again, pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
