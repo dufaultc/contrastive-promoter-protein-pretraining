@@ -226,7 +226,7 @@ class SequenceCLIPTransformer(nn.Module):
             protein_embedding = self.protein_projection(protein_strings)
         else:              
             protein_features = self.protein_encoder(**protein_strings)
-            protein_embedding = self.protein_projection(protein_features.last_hidden_state[:, 0, :])
+            protein_embedding = self.protein_projection(torch.mean(protein_features.last_hidden_state, dim=1))
 
         promoter_features = self.promoter_encoder(promoter_strings)
         promoter_embedding = self.promoter_projection(promoter_features)
