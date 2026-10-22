@@ -119,4 +119,11 @@ To run the evaluations shown in our paper, first follow the installation instruc
 
 `evaluation_zero_shot_retrieval.ipynb` demonstrates how to run the zero-shot co-regulated gene retrieval evaluation for each C3P model and baseline. Again, pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
 
-`binding_site_prediction_all.py` can be used to perform the zero-shot binding site prediction evaluation with C3P and each gLM baseline. If you want to use Evo or Evo2, you will need to install the required libraries first before running the script.
+`binding_site_prediction_all.py` can be used to perform the zero-shot binding site prediction evaluation with C3P and each gLM baseline. If you want to use Evo or Evo2, you will need to install the required libraries first before running the script. Before running this script, you will need to download the E. coli regulator binding site and sigma factor binding site annotations from RegulonDB. This can be done with the below commands (executed from the project root).
+```bash
+curl -k 'https://regulondb.ccg.unam.mx/graphql' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: https://regulondb.ccg.unam.mx' --data-binary '{"query":"{\n  getAllOperon(limit:10000000){\n    data{\n      operon{\n        strand\n      }\n      transcriptionUnits{\n        name\n        promoter{\n          boxes{\n            leftEndPosition\n            rightEndPosition\n            sequence\n          }\n    }\n      }\n    }\n  }\n}\n"}' --compressed > data/sigma_box_sites.json
+```
+
+```bash
+curl -k 'https://regulondb.ccg.unam.mx/graphql' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Connection: keep-alive' -H 'DNT: 1' -H 'Origin: https://regulondb.ccg.unam.mx' --data-binary '{"query":"{\n  getAllOperon(limit:10000000){\n    data{\n      operon{\n        strand\n      }\n      transcriptionUnits{\n        name\n        promoter{\n          regulatorBindingSites{\n            regulator{\n              name\n            }\n            regulatoryInteractions{\n              confidenceLevel\n              regulatorySite{\n                leftEndPosition\n                rightEndPosition\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"}' --compressed > data/regulator_sites.json
+```
