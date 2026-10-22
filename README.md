@@ -115,6 +115,8 @@ CUDA_VISIBLE_DEVICES=0 python ./promoter_protein_clip/train.py \
 
 To run the evaluations shown in our paper, first follow the installation instructions above.
 
-`notebooks/evaluation_regulon_prediction.ipynb` demonstrates how to run the k-NN regulon/sigmulon prediction evaluation for each trained C3P model (100M, 25M, 5M, and 1M parameters), each gLM baseline (gLM2, PromoGen2, Evo, Evo2), and when using protein embeddings from ESM2 (150M). Pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
+`evaluation_regulon_prediction.ipynb` demonstrates how to run the k-NN regulon/sigmulon prediction evaluation for each trained C3P model (100M, 25M, 5M, and 1M parameters), each gLM baseline (gLM2, PromoGen2, Evo, Evo2), and when using protein embeddings from ESM2 (150M). Pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
 
-`notebooks/evaluation_zero_shot_retrieval.ipynb` demonstrates how to run the zero-shot co-regulated gene retrieval evaluation for each C3P model and baseline. Again, pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
+`evaluation_zero_shot_retrieval.ipynb` demonstrates how to run the zero-shot co-regulated gene retrieval evaluation for each C3P model and baseline. Again, pre-computed nearest neighbours for Evo and Evo2 are loaded rather than computed in the notebook.
+
+`binding_site_prediction_all.py` can be used to perform the zero-shot binding site prediction evaluation with C3P and each gLM baseline. If you want to use Evo or Evo2, you will need to install the required libraries first before running the script.
